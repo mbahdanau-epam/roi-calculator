@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  color: #e0e0e0;
-  background: #0f0f23;
+  font-family: "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  color: #231f20;
+  background: #f2f2f2;
   min-height: 100vh;
 }
 
@@ -17,26 +17,43 @@ body {
   padding: 2rem;
 }
 
+/* Header — dark EPAM-style with gradient accent */
 .header {
   text-align: center;
   margin-bottom: 2rem;
-  padding: 2rem 1rem;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  border-radius: 12px;
-  border: 1px solid #2a2a4a;
+  padding: 2.5rem 1.5rem 2rem;
+  background: #060606;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0047ff, #00f6ff, #00ffd3);
 }
 
 .header h1 {
-  font-size: 2rem;
-  color: #39f;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .header p {
-  color: #aaa;
-  font-size: 1.1rem;
+  color: #bbb;
+  font-size: 1.05rem;
+  font-weight: 300;
 }
 
+/* Two-column layout */
 .layout {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -49,21 +66,25 @@ body {
   top: 2rem;
 }
 
+/* Card style — white, clean, subtle shadow */
 .card {
-  background: #1a1a2e;
-  border: 1px solid #2a2a4a;
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 1rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #eee;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .card h2 {
-  color: #39f;
-  font-size: 1.2rem;
+  color: #0047ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #2a2a4a;
+  border-bottom: 2px solid #f2f2f2;
 }
 
 /* Form styles */
@@ -73,69 +94,76 @@ body {
 
 .form-group label {
   display: block;
-  color: #aaa;
-  font-size: 0.9rem;
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin-bottom: 0.4rem;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 0.7rem 1rem;
-  background: #0f0f23;
-  border: 1px solid #2a2a4a;
-  border-radius: 8px;
-  color: #e0e0e0;
+  padding: 0.75rem 1rem;
+  background: #fbfafa;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  color: #231f20;
+  font-family: inherit;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #39f;
-  box-shadow: 0 0 0 3px rgba(51, 153, 255, 0.15);
+  border-color: #0047ff;
+  box-shadow: 0 0 0 3px rgba(0, 71, 255, 0.1);
 }
 
 .form-group select option {
-  background: #1a1a2e;
-  color: #e0e0e0;
+  background: #fff;
+  color: #231f20;
 }
 
 /* Metrics styles */
 .metrics {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .metric {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #0f0f23;
-  border-radius: 8px;
-  border: 1px solid #2a2a4a;
+  padding: 1rem 1.25rem;
+  background: #fbfafa;
+  border-radius: 0.5rem;
+  border-left: 4px solid #0047ff;
 }
 
 .metric-label {
-  color: #aaa;
-  font-size: 0.95rem;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .metric-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #e0e0e0;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #231f20;
 }
 
 .metric-value.positive {
-  color: #4ade80;
+  color: #0078c2;
 }
 
 .metric-value.negative {
-  color: #f87171;
+  color: #f03016;
 }
 
 /* Chart styles */

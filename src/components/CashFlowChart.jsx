@@ -28,31 +28,31 @@ function CashFlowChart({ data }) {
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data} margin={{ top: 10, right: 30, left: 10, bottom: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#2a2a4a" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
             <XAxis
               dataKey="month"
-              label={{ value: 'Month', position: 'insideBottom', offset: -5, fill: '#aaa' }}
-              tick={{ fill: '#aaa' }}
+              label={{ value: 'Month', position: 'insideBottom', offset: -5, fill: '#666' }}
+              tick={{ fill: '#666' }}
             />
             <YAxis
               tickFormatter={formatYAxis}
-              tick={{ fill: '#aaa' }}
+              tick={{ fill: '#666' }}
             />
             <Tooltip
               formatter={(value) => [formatTooltip(value), 'Cash Flow']}
               labelFormatter={(label) => `Month ${label}`}
-              contentStyle={{ backgroundColor: '#1a1a2e', border: '1px solid #333', borderRadius: '8px' }}
-              itemStyle={{ color: '#39f' }}
-              labelStyle={{ color: '#ccc' }}
+              contentStyle={{ backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
+              itemStyle={{ color: '#0047ff' }}
+              labelStyle={{ color: '#231f20', fontWeight: 600 }}
             />
-            <ReferenceLine y={0} stroke="#888" strokeDasharray="6 4" label={{ value: 'Break-even', fill: '#888', position: 'right' }} />
+            <ReferenceLine y={0} stroke="#bbb" strokeDasharray="6 4" label={{ value: 'Break-even', fill: '#999', position: 'right' }} />
             <Line
               type="monotone"
               dataKey="cashFlow"
-              stroke="#39f"
-              strokeWidth={2}
-              dot={{ fill: '#39f', r: 3 }}
-              activeDot={{ r: 5 }}
+              stroke="#0047ff"
+              strokeWidth={2.5}
+              dot={{ fill: '#0047ff', r: 3 }}
+              activeDot={{ r: 5, fill: '#00f6ff', stroke: '#0047ff' }}
             />
           </LineChart>
         </ResponsiveContainer>
